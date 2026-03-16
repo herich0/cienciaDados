@@ -1,0 +1,10 @@
+alunos = [ "joão", "maria", "pedro", "ana" ,   "carlos"]
+print(alunos)
+alunos.insert(2, "lucas")
+print(alunos)
+alunos.append("mariana")
+print(alunos)
+alunos.remove("ana")
+print(alunos)
+alunos.sort()
+print(alunos)
