@@ -1,5 +1,3 @@
-#dae parmeiras
-#dae shimira
 import requests
 import json
 
