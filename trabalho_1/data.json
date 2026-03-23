@@ -1,0 +1,71 @@
+[
+    {
+        "id": 38033121,
+        "name": "Dark Magician Girl",
+        "frameType": "effect",
+        "desc": "Gains 300 ATK for every \"Dark Magician\" or \"Magician of Black Chaos\" in the GY.",
+        "atk": 2000,
+        "def": 1700,
+        "imagem_local": "38033121.jpg"
+    },
+    {
+        "id": 12580477,
+        "name": "Raigeki",
+        "type": "Spell Card",
+        "frameType": "spell",
+        "desc": "Destroy all monsters your opponent controls.",
+        "atk": null,
+        "def": null,
+        "imagem_local": "12580477.jpg"
+    },
+    {
+        "id": 55144522,
+        "name": "Pot of Greed",
+        "type": "Spell Card",
+        "frameType": "spell",
+        "desc": "Draw 2 cards.",
+        "atk": null,
+        "def": null,
+        "imagem_local": "55144522.jpg"
+    },
+    {
+        "id": 46986414,
+        "name": "Dark Magician",
+        "type": "Normal Monster",
+        "frameType": "normal",
+        "desc": "''The ultimate wizard in terms of attack and defense.''",
+        "atk": 2500,
+        "def": 2100,
+        "imagem_local": "46986414.jpg"
+    },
+    {
+        "id": 44095762,
+        "name": "Mirror Force",
+        "type": "Trap Card",
+        "frameType": "trap",
+        "desc": "When an opponent's monster declares an attack: Destroy all your opponent's Attack Position monsters.",
+        "atk": null,
+        "def": null,
+        "imagem_local": "44095762.jpg"
+    },
+    {
+        "id": 58481572,
+        "name": "Masked HERO Dark Law",
+        "type": "Fusion Monster",
+        "frameType": "fusion",
+        "desc": "Must be Special Summoned by \"Mask Change\". Any card sent to your opponent's GY is banished instead. Once per turn, if your opponent adds a card(s) from their Deck to their hand (except during the Draw Phase or the Damage Step): You can banish 1 random card from your opponent's hand.",
+        "atk": 2400,
+        "def": 1800,
+        "imagem_local": "58481572.jpg"
+    },
+    {
+        "id": 4731783,
+        "name": "A Bao A Qu, the Lightless Shadow",
+        "type": "Link Monster",
+        "frameType": "link",
+        "desc": "2+ monsters, including a Fiend monster\r\nDuring the Main Phase (Quick Effect): You can discard 1 card, then activate 1 of these effects;\r\n● Destroy 1 card on the field.\r\n● Banish this card (until the End Phase), and if you do, Special Summon 1 LIGHT or DARK monster from your GY.\r\nDuring your Standby Phase: You can draw cards equal to the number of different Monster Types in your GY, then place cards from your hand on the bottom of the Deck in any order, equal to the number of cards you drew. You can only use each effect of \"A Bao A Qu, the Lightless Shadow\" once per turn.",
+        "atk": 2800,
+        "def": null,
+        "imagem_local": "4731783.jpg"
+    }
+]
