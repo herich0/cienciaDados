@@ -1,0 +1,4 @@
+Python é uma linguagem de programação incrivelmente versátil.
+Aprender Python é essencial para quem deseja atuar na área de ciência de dados.
+Dados, dados e mais dados: a ciência de dados vive de extrair valor deles.
+Com Python, o processamento de dados fica muito mais fácil e intuitivo.
