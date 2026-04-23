@@ -1,0 +1,12 @@
+2026-04-13 11:12:20,563 - ERROR - Falha no pipeline: 406 Client Error: Not Acceptable for url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json
+2026-04-13 11:15:29,798 - ERROR - Falha no pipeline: 406 Client Error: Not Acceptable for url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json
+2026-04-13 11:20:53,616 - ERROR - Falha no pipeline: 406 Client Error: Not Acceptable for url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json&dataInicial=01/01/2016&dataFinal=13/04/2026
+2026-04-13 11:24:04,114 - ERROR - Falha no pipeline: 'CMySQLConnection' object has no attribute 'get_database'
+2026-04-13 11:25:46,122 - INFO - Conexão ativa no banco: teste
+2026-04-13 11:25:46,243 - ERROR - Falha no pipeline: 'bool' object is not callable
+2026-04-13 11:27:16,511 - INFO - Conexão ativa no banco: teste
+2026-04-13 11:27:16,618 - INFO - Processamento de 2507 linhas diárias concluído.
+2026-04-13 11:27:16,940 - WARNING - Comandos internos do slide testados: 'CMySQLConnection' object has no attribute 'set_database'
+2026-04-17 10:41:03,348 - INFO - Conexão ativa no banco: teste
+2026-04-17 10:41:03,452 - INFO - Processamento de 4 linhas diárias concluído.
+2026-04-17 10:41:03,726 - WARNING - Comandos internos do slide testados: 'CMySQLConnection' object has no attribute 'set_database'
