@@ -3,6 +3,7 @@ import pandas as pd
 import mysql.connector
 import matplotlib.pyplot as plt
 import logging
+import json
 from datetime import datetime, timedelta
 
 logging.basicConfig(
@@ -33,12 +34,21 @@ def executar_pipeline():
         
         df_filtrado = df.copy()
 
-        configuracoes_db = {
-            "host": "127.0.0.1",
-            "user": "root",
-            "password": "Eki2066rgb!",
-            "database": "teste"
-        }
+
+        with open('config.json', 'r') as file:
+            configuracoes_db = json.load(file)
+
+        try:
+            cnx = mysql.connector.connect(
+                user=configuracoes_db['user'],
+                password=configuracoes_db['password'],
+                host=configuracoes_db['host'],
+                database=configuracoes_db['database']
+            )
+        except mysql.connector.Error as err:
+            logging.error(f"Erro ao conectar: {err}")
+            print(f"Erro ao conectar: {err}")
+            return
         
         cnx = mysql.connector.connect(**configuracoes_db)
         
@@ -87,23 +97,29 @@ def executar_pipeline():
         
         print(f"Estatísticas Dólar (10 anos) -> Média: R$ {media:.2f} | Máximo: R$ {maximo:.2f} | Mínimo: R$ {minimo:.2f}")
         
-        plt.figure(figsize=(14, 6))
+        fig = plt.figure(figsize=(16, 10))
         
-        plt.subplot(1, 2, 1)
+        plt.subplot(2, 2, 1)
         plt.plot(df_db['Data'], df_db['Valor'], color='green', linewidth=1)
         plt.title('Evolução Diária do Dólar (Venda)')
         plt.xlabel('Ano')
-        plt.ylabel('Preço em Reais (R$)')
+        plt.ylabel('Preço (R$)')
         plt.grid(True)
         
-        plt.subplot(1, 2, 2)
+        plt.subplot(2, 2, 2)
         plt.boxplot(df_db['Valor'], vert=False, patch_artist=True)
         plt.title('Dispersão e Outliers do Valor do Dólar')
         plt.xlabel('Valor (R$)')
+
+        plt.subplot(2, 1, 2)
+        df_db['Faixa'] = pd.cut(df_db['Valor'], bins=5)
+        distribuicao = df_db['Faixa'].value_counts()
+        plt.pie(distribuicao, labels=distribuicao.index, autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
+        plt.title('Porcentagem de Tempo por Faixa de Preço (Últimos 10 Anos)')
         
         plt.tight_layout()
         plt.savefig('graficos_dolar_trabalho3.png')
-        print("Gráficos salvos com sucesso na pasta atual!")
+        print("Gráficos atualizados salvos na pasta atual!")
         
         cursor.close()
         demonstrar_comandos_internos(cnx)
