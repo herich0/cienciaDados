@@ -39,18 +39,11 @@ def executar_pipeline():
             configuracoes_db = json.load(file)
 
         try:
-            cnx = mysql.connector.connect(
-                user=configuracoes_db['user'],
-                password=configuracoes_db['password'],
-                host=configuracoes_db['host'],
-                database=configuracoes_db['database']
-            )
+            cnx = mysql.connector.connect(**configuracoes_db)
         except mysql.connector.Error as err:
-            logging.error(f"Erro ao conectar: {err}")
-            print(f"Erro ao conectar: {err}")
-            return
-        
-        cnx = mysql.connector.connect(**configuracoes_db)
+            logging.error(f"Erro ao conectar no banco: {err}")
+            print(f"Erro crítico ao conectar: {err}")
+            return 
         
         is_ativo = cnx.is_connected() if callable(getattr(cnx, 'is_connected', None)) else cnx.is_connected
         if is_ativo:
